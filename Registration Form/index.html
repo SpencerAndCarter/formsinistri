@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<!---Coding By CodingLab | www.codinglabweb.com--->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Registration Form in HTML CSS</title>
+    <!---Custom CSS File--->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  </head>
+
+  <body>
+    <section class="container">
+      
+      <form id="myForm" action="https://api.web3forms.com/submit" method="POST" class="form" enctype="multipart/form-data">
+        <header>DENUNCIA SINISTRO</header>
+        <input type="hidden" name="access_key" value="c4de7645-4905-4398-ad8b-618765da5227">
+        <div class="input-box">
+          <label>Data sinistro</label>
+          <input id="data_sinistro" type="date" placeholder="Inserisci data sinistro" name="Data sinistro" required />
+        </div>
+
+        <div class="column">
+          <div class="input-box">
+            <label>Numero certificato</label>
+            <input type="number" placeholder="Inserisci numero certificato" name="Numero certificato" required />
+          </div>
+        </div>
+
+        <div class="input-box address">
+          <label>Nome completo</label>
+          <div class="column">
+            <input type="text" placeholder="Nome" name="Nome" required />
+            <input type="text" placeholder="Cognome" name="Cognome" required />
+          </div>
+        </div>
+
+        <div class="input-box">
+          <label>IBAN</label>
+          <input type="text" placeholder="Inserisci IBAN" name="IBAN" required />
+        </div>
+
+        <div class="input-box">
+          <label>Intestatario conto bancario</label>
+          <input type="text" placeholder="Intestatario conto bancario" name="Intestatario conto bancario"required />
+        </div>
+
+        <div class="input-box">
+          <label>Codice fiscale</label>
+          <input type="text" placeholder="Inserisci codice fiscale" name="Codice fiscale" required />
+        </div>
+
+        
+
+        <div class="column">
+          <div class="input-box">
+            <label>Numero di telefono</label>
+            <input type="number" placeholder="Intestatario numero di telefono" name="Numero di telefono" required />
+          </div>
+
+          <div class="input-box">
+            <label>Email</label>
+            <input type="text" placeholder="Intestatario la tua email" name="Email" required />
+          </div>
+          
+        </div>
+      
+        <!-- Rimuovi questo form -->
+          <!-- Campi del secondo step -->
+          <div class="input-box">
+            <label for="tipo_sinistro">Tipologia di sinistro</label>
+            <select id="tipo_sinistro" class="select-box" name="tipo_sinistro" required onchange="updateFileTypeInfo()">
+              <option value="">Seleziona la tipologia di sinistro</option>
+              <option value="tipo1">Tipo 1</option>
+              <option value="tipo2">Tipo 2</option>
+              <!-- Aggiungi altre opzioni se necessario -->
+            </select>
+          </div>
+          <div id="file_richiesti">
+            <!-- Qui verranno visualizzati i file richiesti in base alla selezione -->
+          </div>
+          <div class="file-upload-container">
+            <label for="file-upload" class="file-upload-label">
+              <i class="fas fa-cloud-upload-alt"></i>
+              Seleziona i file da caricare
+            </label>
+            <input type="file" name="attachment" data-multiple="true" id="file-upload" class="file-input">
+            <ul class="file-list" id="file-list"></ul>
+          </div>
+
+          <div class="terms-container" id="terms-container">
+            <div id="terms-and-conditions">
+              <!-- Aggiungi qui i tuoi termini e condizioni -->
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae metus id massa scelerisque congue. Ut nec justo at orci dignissim finibus in at libero. Proin eleifend enim non neque pellentesque, et placerat purus efficitur. Vivamus ac ligula ex. Maecenas eget erat augue. Vivamus rhoncus a nunc nec cursus. Nullam sed placerat purus, a ullamcorper erat. Suspendisse potenti. Ut quis ex at libero rhoncus congue. Phasellus sit amet feugiat mi. Integer eleifend lorem nec dolor placerat, vitae tempor enim auctor. Integer ultrices convallis massa, quis faucibus tortor tempus sit amet. Proin elementum nisi sed nibh rutrum congue. Donec ullamcorper lacus nec mauris ullamcorper tempus. Quisque ut erat arcu. Mauris commodo mi a tortor vulputate, ac ullamcorper sem efficitur. 
+            </div>
+          </div>
+
+          <input type="checkbox" id="agree" name="agree" value="agree" disabled required> Accetto i termini e le condizioni<br>
+
+        </div>
+          <!-- Pulsante "Submit" per inviare il form -->
+          <button id="submit-btn" type="submit">Invia</button>
+          
+      </form>
+    </section>
+  
+    <script src="main.js"></script>
+    <script src="https://web3forms.com/client/script.js" async defer></script>
+
+
+  </body>
+</html>
